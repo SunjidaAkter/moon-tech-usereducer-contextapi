@@ -20,10 +20,10 @@ const ProductProvider = ({ children }) => {
 
   useEffect(() => {
     dispatch({ type: actionTypes.FETCHING_START });
-    fetch("http://localhost:5000/products")
+    fetch('products.json')
       .then((res) => res.json())
       .then((data) =>
-        dispatch({ type: actionTypes.FETCHING_SUCCESS, payload: data.data })
+        dispatch({ type: actionTypes.FETCHING_SUCCESS, payload: data })
       )
       .catch(() => {
         dispatch({ type: actionTypes.FETCHING_ERROR });

@@ -7,8 +7,8 @@ const Home = () => {
     state: { products, loading, error },
   } = useProducts();
 
+  
   let content;
-
   if (loading) {
     content = <p>Loading</p>;
   }
