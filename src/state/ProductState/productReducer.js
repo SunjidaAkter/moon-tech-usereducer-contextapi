@@ -34,6 +34,11 @@ export const productReducer = (state, action) => {
         ...state,
         cart: [...state.cart, action.payload],
       };
+    case actionTypes.REMOVE_FROM_CART:
+      return {
+        ...state,
+        cart:state.cart.filter(car=>car._id != action.payload._id),
+      }    
     case actionTypes.ADD_TO_WISHLIST:
       return {
         ...state,
